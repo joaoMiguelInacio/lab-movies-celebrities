@@ -1,8 +1,22 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(24, 37, 109);
 }
 
 a {
   color: #00b7ff;
+}
+
+.table {
+  color: rgb(24, 37, 109);
+}
+
+.nav a{
+  color: rgb(24, 37, 109);
+}
+
+h1,
+h2{
+  margin-top: 100px;
 }
