@@ -5,7 +5,6 @@ const Celeb = require("../models/celeb.model.js");
 router.get('/celeb/list', async (req, res, next) => {
   try {
     const celebs = await Celeb.find();
-    console.log(celebs)
     res.render('celeb/list', {celebs});
   } catch (err) {
     next(err);
