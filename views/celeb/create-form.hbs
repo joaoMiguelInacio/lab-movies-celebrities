@@ -1,0 +1,17 @@
+<h2>Create a new celebrity</h2>
+
+<form action="/celeb/create" method="post">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input required maxlength="250" type="text" class="form-control" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="occupation" class="form-label">Occupation</label>
+    <input required type="text" class="form-control" name="occupation">
+  </div>
+  <div class="mb-3">
+    <label for="catchphrase" class="form-label">Catchphrase</label>
+    <input type="text" class="form-control" name="catchphrase">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

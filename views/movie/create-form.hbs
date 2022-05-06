@@ -1,0 +1,21 @@
+<h2>Create a new movie</h2>
+
+<form action="/movie/create" method="post">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input required maxlength="250" type="text" class="form-control" name="title">
+  </div>
+  <div class="mb-3">
+    <label for="genre" class="form-label">Genre</label>
+    <input required type="text" class="form-control" name="genre">
+  </div>
+  <div class="mb-3">
+    <label for="plot" class="form-label">Plot</label>
+    <input type="text" class="form-control" name="plot">
+  </div>
+  <div class="mb-3">
+    <label for="cast" class="form-label">Cast</label>
+    <input type="text" class="form-control" name="cast">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

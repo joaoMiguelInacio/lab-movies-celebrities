@@ -1,0 +1,38 @@
+<h2>Movies</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Genre</th>
+      <th scope="col">Plot</th>
+      <th scope="col">Cast</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  {{#each movie}}
+    <tr scope="row">
+      <td>{{this.title}}</td>
+      <td>{{this.genre}}</td>
+      <td>{{this.plot}}</td>
+      <td>{{this.cast}}</td>
+      <td><a class="btn btn-secondary" href="/movie/{{this._id}}/edit">Edit Movie</a></td>
+      <td>
+          <form action="/movie/{{this._id}}/delete" method="post">
+              <button type="submit" class="btn btn-danger">Delete Movie</button>
+          </form>
+      </td>
+    </tr>
+    {{/each}}
+    <tr>
+      <td>
+        <form action="/movie/create" method="get">
+          <button type="submit" class="btn btn-primary">Add a Movie</button>
+        </form>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>

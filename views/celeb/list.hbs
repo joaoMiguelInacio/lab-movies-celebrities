@@ -1,0 +1,37 @@
+<h2>Celebrities</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Occupation</th>
+      <th scope="col">Catchphrase</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  {{#each celebs}}
+    <tr scope="row">
+      <td>{{this.name}}</td>
+      <td>{{this.occupation}}</td>
+      <td>{{this.catchphrase}}</td>
+      <td><a class="btn btn-secondary" href="/celeb/{{this._id}}/edit">Edit Celebrity</a></td>
+      <td>
+          <form action="/celeb/{{this._id}}/delete" method="post">
+              <button type="submit" class="btn btn-danger">Delete Celebrity</button>
+          </form>
+      </td>
+    </tr>
+    {{/each}}
+    <tr>
+      <td>
+        <form action="/celeb/create" method="get">
+          <button type="submit" class="btn btn-primary">Add a Celebrity</button>
+        </form>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+</table>
