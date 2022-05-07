@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Celeb = require("../models/celeb.model.js");
 
-router.get('/celeb/list', async (req, res, next) => {
+router.get('/list', async (req, res, next) => {
   try {
     const celebs = await Celeb.find();
     res.render('celeb/list', {celebs});
@@ -11,11 +11,11 @@ router.get('/celeb/list', async (req, res, next) => {
   }
 });
 
-router.get('/celeb/create', (req, res, next) => {
+router.get('/create', (req, res, next) => {
   res.render('celeb/create-form');
 });
 
-router.post('/celeb/create', async (req, res, next) => {
+router.post('/create', async (req, res, next) => {
   try {
     const { name, occupation, catchphrase } = req.body;
     await Celeb.create({
@@ -29,7 +29,7 @@ router.post('/celeb/create', async (req, res, next) => {
   }
 });
 
-router.get('/celeb/:id/edit', async (req, res, next) => {
+router.get('/:id/edit', async (req, res, next) => {
   try {
     const { id } = req.params;
     const celeb = await Celeb.findById (id);
@@ -39,7 +39,7 @@ router.get('/celeb/:id/edit', async (req, res, next) => {
   }
 });
 
-router.post('/celeb/:id/edit', async (req, res, next) => {
+router.post('/:id/edit', async (req, res, next) => {
   try {
 		const { id } = req.params;
 		const { name, occupation, catchphrase } = req.body;
@@ -50,7 +50,7 @@ router.post('/celeb/:id/edit', async (req, res, next) => {
 	}
 });
 
-router.post('/celeb/:id/delete', async (req, res, next) => {
+router.post('/:id/delete', async (req, res, next) => {
   try {
 		const { id } = req.params;
 		await Celeb.findByIdAndDelete(id);

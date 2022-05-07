@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Movies = require("../models/movie.model.js");
 
-router.get('/movie/list', async (req, res, next) => {
+router.get('/list', async (req, res, next) => {
   try {
     const movies = await Movies.find();
     res.render('movie/list', {movies});
@@ -11,11 +11,11 @@ router.get('/movie/list', async (req, res, next) => {
   }
 });
 
-router.get('/movie/create', (req, res, next) => {
+router.get('/create', (req, res, next) => {
   res.render('movie/create-form');
 });
 
-router.post('/movie/create', async (req, res, next) => {
+router.post('/create', async (req, res, next) => {
   try {
     const { title, genre, plot, cast } = req.body;
     await Movies.create({
@@ -24,13 +24,13 @@ router.post('/movie/create', async (req, res, next) => {
       plot,
       cast
     });
-    res.redirect("/movie/list");
+    res.redirect("/list");
   } catch (error) {
     next(error);
   }
 });
 
-router.get('/movie/:id/edit', async (req, res, next) => {
+router.get('/:id/edit', async (req, res, next) => {
   try {
     const { id } = req.params;
     const movie = await Movies.findById (id);
@@ -40,7 +40,7 @@ router.get('/movie/:id/edit', async (req, res, next) => {
   }
 });
 
-router.post('/movie/:id/edit', async (req, res, next) => {
+router.post('/:id/edit', async (req, res, next) => {
   try {
 		const { id } = req.params;
 		const { title, genre, plot, cast } = req.body;
@@ -51,7 +51,7 @@ router.post('/movie/:id/edit', async (req, res, next) => {
 	}
 });
 
-router.post('/movie/:id/delete', async (req, res, next) => {
+router.post('/:id/delete', async (req, res, next) => {
   try {
 		const { id } = req.params;
 		await Movies.findByIdAndDelete(id);
@@ -62,7 +62,7 @@ router.post('/movie/:id/delete', async (req, res, next) => {
 });
 
 
-router.get('/movie/:id/details', async (req, res, next) => {
+router.get('/:id/details', async (req, res, next) => {
   try {
     const { id } = req.params;
     const movie = await Movies.findById(id).populate('cast');
