@@ -23,6 +23,7 @@
       <th scope="col"></th>
       <th scope="col"></th>
       <th scope="col"></th>  
+      <th scope="col"></th>  
     </tr>
   </thead>
   {{#each movies}}
@@ -30,16 +31,17 @@
       <td class="align-middle">{{this.title}}</td>
       <td class="align-middle">{{this.genre}}</td>
       <td class="align-middle">{{this.rating}}</td>
+      <td></td>
       <td>
-        <a class="btn btn-info" href="/movie/{{this._id}}/details-url">See details</a>
+        <a class="btn btn-info" href="/movie/{{this._id}}/details-url">Details</a>
       </td>
-      <td><a href="/movie/{{this._id}}/create-review-url" class = "btn btn-primary">Create a Review</a></td>
+      <td><a href="/movie/{{this._id}}/create-review-url" class = "btn btn-primary">Review</a></td>
       <td>
-        <a class="btn btn-secondary" href="/movie/{{this._id}}/edit-url">Edit Movie</a>
+        <a class="btn btn-secondary" href="/movie/{{this._id}}/edit-url">Edit</a>
       </td>
       <td>
           <form action="/movie/{{this._id}}/delete-url" method="post">
-              <button type="submit" class="btn btn-danger">Delete Movie</button>
+              <button type="submit" class="btn btn-danger">Delete</button>
           </form>
       </td>
     </tr>
@@ -50,6 +52,7 @@
           <button type="submit" class="btn btn-primary">Add a Movie</button>
         </form>
       </td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
