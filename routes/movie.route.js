@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require("../models/Movie.model.js");
-const Review = require("../models/Review.model.js");
 
 //See List 1,2,3,4
 
@@ -56,7 +55,7 @@ router.post('/create-url', async (req, res, next) => {
       plot,
       rating
     });
-    res.redirect("/list-url");
+    res.redirect("/movie/list-url");
   } catch (error) {
     next(error);
   }

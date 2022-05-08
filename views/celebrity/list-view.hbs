@@ -15,7 +15,9 @@
       <td>{{this.name}}</td>
       <td>{{this.occupation}}</td>
       <td>{{this.catchphrase}}</td>
-      <td><a class="btn btn-secondary" href="/celebrity/{{this._id}}/edit-url">Edit Celebrity</a></td>
+      <td>
+        <a class="btn btn-secondary" href="/celebrity/{{this._id}}/edit-url">Edit Celebrity</a>
+      </td>
       <td>
           <form action="/celebrity/{{this._id}}/delete-url" method="post">
               <button type="submit" class="btn btn-danger">Delete Celebrity</button>
