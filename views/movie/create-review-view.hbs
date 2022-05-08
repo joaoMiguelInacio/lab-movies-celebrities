@@ -1,0 +1,8 @@
+<h1>Create Review for {{this.title}}</h1>
+<form action="/movie/{{this._id}}/create-review-url" method="post">
+    <div class="mb-3">
+        <label for="content" class="form-label">Review</label>
+        <input required maxlength="250" type="text" class="form-control" id="content" name="content">
+    </div>
+     <button type="submit" class="btn btn-primary">Create Review</button>
+</form>

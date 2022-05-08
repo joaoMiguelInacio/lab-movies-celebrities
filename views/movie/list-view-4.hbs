@@ -1,20 +1,16 @@
-<h2>Movies<!--<small> (click in rating to change sorting order or use the sorting button)</small>--></h2>
+<h2>Movies</h2>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th class="align-middle" scope="col">Title</th>
       <th class="align-middle" scope="col">Genre</th>
-      <th class="align-middle" scope="col">
-        <!--<form action="/movie/list-url-2"  method="get">
-          <button id="rating-button">-->Rating<!--</button>
-        </form>-->
-      </th>
+      <th class="align-middle" scope="col">Rating</th>
       <th scope="col">
         <div class="dropdown">
           <button class="dropbtn">Sort &#x21e9</button>
             <div class="dropdown-content">
-              <li><a class="dropdown-item" href="/movie/list-url-4">Title</a></li>
+              <li><a class="dropdown-item" href="/movie/list-url">Title</a></li>
               <li><a class="dropdown-item" href="/movie/list-url-3">Genre</a></li>
               <li><a class="dropdown-item" href="/movie/list-url-2">Rating</a></li>
             </div>
@@ -22,7 +18,6 @@
       </th>
       <th scope="col"></th>
       <th scope="col"></th>
-      <th scope="col"></th>  
     </tr>
   </thead>
   {{#each movies}}
@@ -33,7 +28,6 @@
       <td>
         <a class="btn btn-info" href="/movie/{{this._id}}/details-url">See details</a>
       </td>
-      <td><a href="/movie/{{this._id}}/create-review-url" class = "btn btn-primary">Create a Review</a></td>
       <td>
         <a class="btn btn-secondary" href="/movie/{{this._id}}/edit-url">Edit Movie</a>
       </td>
@@ -50,7 +44,6 @@
           <button type="submit" class="btn btn-primary">Add a Movie</button>
         </form>
       </td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
