@@ -1,6 +1,6 @@
 <h2>Update {{title}}</h2>
 
-<form action="/celeb/{{_id}}/edit" method="post">
+<form action="/movie/{{_id}}/edit-url" method="post">
   <div class="mb-3">
     <label for="title" class="form-label">Title</label>
     <input required maxlength="250" type="text" class="form-control" name="title" value="{{title}}">
@@ -12,10 +12,6 @@
   <div class="mb-3">
     <label for="plot" class="form-label">Plot</label>
     <input type="text" class="form-control" name="plot" value="{{plot}}">
-  </div>
-  <div class="mb-3">
-    <label for="cast" class="form-label">Cast</label>
-  <input type="text" class="form-control" name="cast" value="{{cast}}">
   </div>
   <button class="btn btn-primary" type="submit">Submit</button>
 </form>

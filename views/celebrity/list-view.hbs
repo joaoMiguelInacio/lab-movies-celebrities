@@ -10,14 +10,14 @@
       <th scope="col"></th>
     </tr>
   </thead>
-  {{#each celebs}}
+  {{#each celebrities}}
     <tr scope="row">
       <td>{{this.name}}</td>
       <td>{{this.occupation}}</td>
       <td>{{this.catchphrase}}</td>
-      <td><a class="btn btn-secondary" href="/celeb/{{this._id}}/edit">Edit Celebrity</a></td>
+      <td><a class="btn btn-secondary" href="/celebrity/{{this._id}}/edit-url">Edit Celebrity</a></td>
       <td>
-          <form action="/celeb/{{this._id}}/delete" method="post">
+          <form action="/celebrity/{{this._id}}/delete-url" method="post">
               <button type="submit" class="btn btn-danger">Delete Celebrity</button>
           </form>
       </td>
@@ -25,7 +25,7 @@
     {{/each}}
     <tr>
       <td>
-        <form action="/celeb/create" method="get">
+        <form action="/celebrity/create-url" method="get">
           <button type="submit" class="btn btn-primary">Add a Celebrity</button>
         </form>
       </td>
