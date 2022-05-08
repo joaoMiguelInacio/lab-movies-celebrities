@@ -12,10 +12,15 @@
 
   <body>
     <nav id="nav" class="nav nav-pills">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/celebrity/list-url">Celebrities</a>
-      <a class="nav-link" href="/movie/list-url">Movies</a>
-      <a class="nav-link" href="/review/list-url">Reviews</a>
+      <a class="nav-link align-middle" href="/">Home</a>
+      <a class="nav-link align-middle" href="/celebrity/list-url">Celebrities</a>
+      <a class="nav-link align-middle" href="/movie/list-url">Movies</a>
+      <a class="nav-link align-middle" href="/review/list-url">Reviews</a>
+      <form class="index-search" action="/movie/movie-search" method="get">
+        <label for="movie-input"></label>
+          <input id="movie-input" type="text" name="movie" />
+        <input class="index-search-button" type="submit" value="Search for a Movie" />
+      </form>
     </nav>
     <div class="container">
       {{{body}}}

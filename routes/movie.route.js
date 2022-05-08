@@ -131,4 +131,19 @@ router.get('/:id/details-url', async (req, res, next) => {
   }
 });
 
+router.get('/movie-search', async (req, res, next) => {
+  try {
+    const movies = await Movie.find({title : req.query.movie});
+    const searchedMovie = req.query.movie;
+    if (movies.length >= 1){
+      res.render('movie/list-view', {movies});
+    } else {
+      res.render('movie/not-found-view', {searchedMovie});
+    }
+  } catch (err) {
+    next(err);
+  }
+});
+
+
 module.exports = router;
