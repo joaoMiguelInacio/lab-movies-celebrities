@@ -6,7 +6,6 @@ const Review = require("../models/Review.model.js");
 router.get('/list-url', async (req, res, next) => {
   try {
     const reviews = await Review.find().populate('movie');
-    console.log(reviews)
     res.render('review/list-view', {reviews});
   } catch (err) {
     next(err);
