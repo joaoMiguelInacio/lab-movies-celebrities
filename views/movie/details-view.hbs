@@ -2,38 +2,39 @@
 <hr>
 <h3>Genre</h3>
 <p>{{this.genre}}</p>
-<hr>
+
 {{#if this.plot}}
+    <hr>
     <h3>Plot</h3>
     <p>{{this.plot}}</p>
 {{/if}}
 {{#if this.rating}}
-<hr>
-<h3>Rating</h3>
-<p>{{this.rating}}</p>
+    <hr>
+    <h3>Rating</h3>
+    <p>{{this.rating}}</p>
 {{/if}}
 {{#if this.cast}}
-<hr>
-<h3>Cast</h3>
-{{#each this.cast}}
-    <li><b>Name: {{this.name}}</b>
-        <ul>
-            <li>Occupation: {{this.occupation}}</li>
-            <li>Catchphrase: {{this.catchphrase}}</li>
-        </ul>
-    </li>
-{{/each}}
+    <hr>
+    <h3>Cast</h3>
+    {{#each this.cast}}
+        <li><b>Name: {{this.name}}</b>
+            <ul>
+                <li>Occupation: {{this.occupation}}</li>
+                <li>Catchphrase: {{this.catchphrase}}</li>
+            </ul>
+        </li>
+    {{/each}}
 {{/if}}
 {{#if this.reviews}}
-<hr>
-<h3>Review:</h3>
-{{#each this.reviews}}
-    <li><b>Content:</b>
-        <ul>
-            <li>{{this.content}}</li>
-        </ul>
-    </li>
-{{/each}}
+    <hr>
+    <h3>Review:</h3>
+    {{#each this.reviews}}
+        <li><b>Content:</b>
+            <ul>
+                <li>{{this.content}}</li>
+            </ul>
+        </li>
+    {{/each}}
 {{/if}}
 
 

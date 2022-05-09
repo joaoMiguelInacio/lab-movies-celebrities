@@ -6,7 +6,10 @@ const reviewSchema = new Schema ({
         maxlength: 250,
         required: true
     },
-    movie: {type: Schema.Types.ObjectId, ref: 'Movies' }
+    movie: {
+        type: Schema.Types.ObjectId, ref: 'Movies',
+        required: true
+    }
 });
 
 const Review = model('Reviews', reviewSchema);

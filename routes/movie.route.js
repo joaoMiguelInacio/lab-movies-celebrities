@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require("../models/Movie.model.js");
+const Review = require("../models/Review.model.js");
 
 //See List 1,2,3,4
 
@@ -72,11 +73,12 @@ router.get('/:id/create-review-url', async(req, res, next) => {
 router.post('/:id/create-review-url', async (req, res, next) => {
   try{
       const { content } = req.body;
-      await Review.create( { content } );
-      const allReviews = await Review.find();
-      const newReview = allReviews[allReviews.length-1];
-      const newReviewId = newReview._id;
       const { id } = req.params;
+      const newReview = await Review.create ({
+         content: content,
+         movie: id
+      });
+      const newReviewId = newReview._id;
       await Movie.findByIdAndUpdate(id, { $addToSet: { reviews: newReviewId } });
       res.redirect(`/movie/${id}/details-url`); 
   } catch (error) {
@@ -130,6 +132,8 @@ router.get('/:id/details-url', async (req, res, next) => {
     next(error);
   }
 });
+
+//Search for a movie
 
 router.get('/movie-search', async (req, res, next) => {
   try {
